@@ -1,0 +1,15 @@
+:root {
+  --light-blue: #cff9ff;
+  --footer-beige: #f5f5dc;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#container1 {
+  /* margin-left: 6rem; */
+}
