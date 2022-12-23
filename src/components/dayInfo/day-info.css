@@ -1,0 +1,62 @@
+:root {
+  --light-blue: #cff9ff;
+  --footer-beige: #f5f5dc;
+}
+
+#descriptionP,
+#locationP,
+#tempP {
+  text-align: center;
+}
+
+#descriptionP {
+  font-weight: normal;
+  font-size: 3rem;
+  margin: 0;
+}
+
+#locationP {
+  font-weight: normal;
+  margin: 0;
+  font-size: 2rem;
+}
+
+#tempP {
+  font-size: 5rem;
+  margin: 10px;
+}
+
+#gif-temp {
+  height: 200px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.bottom-info {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.bottom-info h2 {
+  font-weight: normal;
+  font-size: 2rem;
+}
+
+#low,
+#feels-like,
+#high {
+  font-weight: 700;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.bot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

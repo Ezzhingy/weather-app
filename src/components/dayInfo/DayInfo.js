@@ -12,6 +12,16 @@ export const DayInfo = ({ location }) => {
     tempP.innerText = `${Math.round(jsonData.main.temp)}°C`;
   };
 
+  const updateBot = (jsonData) => {
+    const low = document.getElementById("low");
+    const feelsLike = document.getElementById("feels-like");
+    const high = document.getElementById("high");
+
+    low.innerText = `${Math.round(jsonData.main.temp_min)}°C`;
+    feelsLike.innerText = `${Math.round(jsonData.main.feels_like)}°C`;
+    high.innerText = `${Math.round(jsonData.main.temp_max)}°C`;
+  };
+
   const updateBg = (jsonData) => {
     const app = document.querySelector(".App");
     if (Math.round(jsonData.main.temp) <= 0) {
@@ -22,6 +32,25 @@ export const DayInfo = ({ location }) => {
       app.classList.remove("snow");
     }
   };
+
+  async function updateGif(jsonData) {
+    const gifTemp = document.getElementById("gif-temp");
+    const gifDescription = jsonData.weather[0].description;
+
+    try {
+      const responseGif = await fetch(
+        `https://api.giphy.com/v1/gifs/translate?api_key=NqeKNP3enWa8n5Rq9nYxyV9wc0hx9ljI&s=${gifDescription.replaceAll(
+          " ",
+          "-"
+        )}`,
+        { mode: "cors" }
+      );
+      const picData = await responseGif.json();
+      gifTemp.src = picData.data.images.original.url;
+    } catch (error) {
+      console.log("gif error, no gif found");
+    }
+  }
 
   useEffect(() => {
     async function refreshDaily() {
@@ -35,12 +64,13 @@ export const DayInfo = ({ location }) => {
           { mode: "cors" }
         );
         const locationJson = await locationPromise.json();
-        console.log(locationJson);
 
         updateCenter(locationJson);
+        updateBot(locationJson);
         updateBg(locationJson);
+        updateGif(locationJson);
       } catch (error) {
-        console.log("add error handling");
+        console.log("invalid location, please try again");
       }
     }
 
@@ -48,6 +78,10 @@ export const DayInfo = ({ location }) => {
 
     refreshDaily();
     locationBtn.addEventListener("click", refreshDaily);
+
+    return () => {
+      document.removeEventListener("click", refreshDaily);
+    };
   }, []);
 
   return (
@@ -57,8 +91,23 @@ export const DayInfo = ({ location }) => {
         <h3 id="locationP"></h3>
         <h1 id="tempP"></h1>
       </div>
-      <div className="gif-container"></div>
-      <div className="bottom-info"></div>
+      <div className="gif-container">
+        <img id="gif-temp" src="#"></img>
+      </div>
+      <div className="bottom-info">
+        <div className="bot-container">
+          <h2>Low</h2>
+          <h2 id="low"></h2>
+        </div>
+        <div className="bot-container">
+          <h2>Feels Like</h2>
+          <h2 id="feels-like"></h2>
+        </div>
+        <div className="bot-container">
+          <h2>High</h2>
+          <h2 id="high"></h2>
+        </div>
+      </div>
     </div>
   );
 };
