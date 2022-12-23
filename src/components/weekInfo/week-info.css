@@ -1,0 +1,39 @@
+:root {
+  --light-blue: #cff9ff;
+  --footer-grey: rgb(148 165 181 / 72%);
+}
+
+#right-container {
+  /* align-self: flex-start; */
+}
+
+.small-container {
+  flex: 1;
+  background-color: var(--light-blue);
+  opacity: 0.5;
+  text-align: center;
+  border: 1px solid lightblue;
+  padding: 20px 0;
+  margin-right: 5px;
+  border-radius: 8px;
+}
+
+.small-container:hover {
+  transform: scale(1.05);
+  transform-origin: top right 40px;
+  transition-duration: 0.5s;
+}
+
+.small-p,
+.small-temp {
+  color: black;
+  margin: 0;
+}
+
+.small-p {
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.small-temp {
+}

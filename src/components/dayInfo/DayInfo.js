@@ -1,14 +1,26 @@
 import "./day-info.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-export const DayInfo = ({ location }) => {
+export const DayInfo = () => {
   const updateCenter = (jsonData) => {
+    const days = {
+      0: "Sunday",
+      1: "Monday",
+      2: "Tuesday",
+      3: "Wednesday",
+      4: "Thursday",
+      5: "Friday",
+      6: "Saturday",
+    };
+
     const descriptionP = document.getElementById("descriptionP");
     const locationP = document.getElementById("locationP");
     const tempP = document.getElementById("tempP");
 
+    const today = new Date();
+
     descriptionP.innerText = jsonData.weather[0].description;
-    locationP.innerText = jsonData.name;
+    locationP.innerText = `${jsonData.name} (${days[today.getDay()]})`;
     tempP.innerText = `${Math.round(jsonData.main.temp)}°C`;
   };
 
@@ -82,7 +94,7 @@ export const DayInfo = ({ location }) => {
     return () => {
       document.removeEventListener("click", refreshDaily);
     };
-  }, []);
+  });
 
   return (
     <div className="center-info">
@@ -100,7 +112,7 @@ export const DayInfo = ({ location }) => {
           <h2 id="low"></h2>
         </div>
         <div className="bot-container">
-          <h2>Feels Like</h2>
+          <h2 id="feels-like-text">Feels Like</h2>
           <h2 id="feels-like"></h2>
         </div>
         <div className="bot-container">

@@ -3,6 +3,11 @@
   --footer-beige: #f5f5dc;
 }
 
+.center-info {
+  grid-column: 2;
+  grid-row: 1;
+}
+
 #descriptionP,
 #locationP,
 #tempP {
@@ -53,6 +58,10 @@
   font-weight: 700;
   font-size: 3rem;
   margin: 0;
+}
+
+#feels-like-text {
+  width: 200px;
 }
 
 .bot-container {
