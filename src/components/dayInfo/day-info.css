@@ -1,29 +1,35 @@
 :root {
   --light-blue: #cff9ff;
-  --footer-beige: #f5f5dc;
+  --font-blue: #27b4c8;
+  --footer-grey: rgb(148 165 181 / 72%);
 }
 
 .center-info {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
+  background-color: #ffffff;
+  opacity: 0.7;
+  border-radius: 8px;
 }
 
-#descriptionP,
-#locationP,
-#tempP {
-  text-align: center;
+#info-gif-container {
+  display: flex;
+  align-items: center;
 }
 
 #descriptionP {
   font-weight: normal;
   font-size: 3rem;
   margin: 0;
+  margin-top: 30px;
+  color: var(--font-blue);
+  width: max-content;
 }
 
 #locationP {
   font-weight: normal;
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 #tempP {
@@ -33,18 +39,21 @@
 
 #gif-temp {
   height: 200px;
-  width: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: 50px;
   border-radius: 10px;
+}
+
+#descriptionP,
+#locationP,
+#tempP {
+  margin-left: 50px;
 }
 
 .bottom-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   gap: 50px;
+  text-align: center;
 }
 
 .bottom-info h2 {
@@ -58,6 +67,10 @@
   font-weight: 700;
   font-size: 3rem;
   margin: 0;
+}
+
+.bot-description {
+  color: var(--font-blue);
 }
 
 #feels-like-text {

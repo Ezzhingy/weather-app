@@ -1,12 +1,13 @@
 :root {
   --light-blue: #cff9ff;
+  --font-blue: #27b4c8;
   --footer-grey: rgb(148 165 181 / 72%);
 }
 
 .small-container {
   flex: 1;
   background-color: var(--light-blue);
-  opacity: 0.5;
+  opacity: 0.7;
   text-align: center;
   border: 1px solid lightblue;
   padding: 20px 0;

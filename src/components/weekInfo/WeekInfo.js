@@ -30,15 +30,16 @@ export const WeekInfo = () => {
       const location =
         locationInput.value === "" ? "london" : locationInput.value;
 
+      const bigContainer = document.getElementById("right-container");
+      const temp = bigContainer.innerHTML;
+      bigContainer.innerHTML = "";
+
       try {
         const locationPromise = await fetch(
           `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=7c7ac1d1a3ebbb2a4e6ee344cc6cc97b`,
           { mode: "cors" }
         );
         const locationJson = await locationPromise.json();
-
-        const bigContainer = document.getElementById("right-container");
-        bigContainer.innerHTML = "";
 
         for (let i = 0; i < locationJson.list.length; i += 8) {
           const smallContainer = document.createElement("div");
@@ -66,6 +67,7 @@ export const WeekInfo = () => {
         const errorHandling = document.getElementById("error-handling");
         errorHandling.innerText =
           "Location not found. Search must be in the form of 'City', 'City, State' or 'City, Country'.";
+        bigContainer.innerHTML = temp;
       }
     }
 

@@ -1,9 +1,9 @@
 import "./App.css";
+import "./responsive.css";
 import magnify from "./magnify.svg";
 
 import { DayInfo } from "./components/dayInfo/DayInfo";
 import { WeekInfo } from "./components/weekInfo/WeekInfo";
-import { GetMap } from "./components/getMap/GetMap";
 
 import { useEffect } from "react";
 
@@ -23,12 +23,11 @@ function App() {
 
   return (
     <div className="App">
-      <GetMap />
       <div id="user-input">
         <div id="location-container">
           <input id="location" type="text" placeholder="Search location..." />
           <button id="location-btn">
-            <img src={magnify} alt="Search" height={30} />
+            <img src={magnify} alt="Search" height={40} />
           </button>
         </div>
         <div id="error-handling"></div>

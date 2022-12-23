@@ -1,13 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans&display=swap");
+
 :root {
   --light-blue: #cff9ff;
+  --font-blue: #27b4c8;
   --footer-grey: rgb(148 165 181 / 72%);
 }
 
 .App {
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 0.8fr;
+  font-family: "Work Sans", sans-serif;
 }
 
 .snow {
@@ -34,26 +38,44 @@
 }
 
 #user-input button {
-  background-color: transparent;
-  border: none;
   cursor: pointer;
+  background-color: var(--font-blue);
+  border: 0;
+  border-radius: 50%;
+  outline: 0;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#user-input button:hover {
+  background-color: #4ccfe2;
+  transition-duration: 0.2s;
 }
 
 #user-input input {
   background-color: var(--light-blue);
   border: none;
-  border-bottom: 1px solid black;
-  opacity: 0.5;
+  border-bottom: 4px solid black;
+  opacity: 0.7;
   border-radius: 8px;
-  padding: 8px;
+  padding: 14px;
+  margin-right: 15px;
+}
+
+#user-input input:focus {
+  border-bottom: 4px solid var(--font-blue);
+  transition-duration: 0.2s;
 }
 
 #user-input {
-  grid-column: 2;
-  grid-row: 2;
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
   display: flex;
   justify-content: center;
-  align-self: flex-start;
+  align-self: center;
 
   display: flex;
   flex-direction: column;
@@ -69,8 +91,7 @@
   margin-top: auto;
   justify-content: center;
   background-color: var(--footer-grey);
-  grid-row: 2;
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 2;
 }
 
 .footer p {

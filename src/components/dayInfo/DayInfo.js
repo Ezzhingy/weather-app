@@ -100,25 +100,29 @@ export const DayInfo = () => {
 
   return (
     <div className="center-info">
-      <div>
-        <h2 id="descriptionP"></h2>
-        <h3 id="locationP"></h3>
-        <h1 id="tempP"></h1>
-      </div>
-      <div className="gif-container">
-        <img id="gif-temp" src="#"></img>
+      <div id="info-gif-container">
+        <div>
+          <h2 id="descriptionP"></h2>
+          <h3 id="locationP"></h3>
+          <h1 id="tempP"></h1>
+        </div>
+        <div className="gif-container">
+          <img id="gif-temp" src="#"></img>
+        </div>
       </div>
       <div className="bottom-info">
         <div className="bot-container">
-          <h2>Low</h2>
+          <h2 className="bot-description">Low</h2>
           <h2 id="low"></h2>
         </div>
         <div className="bot-container">
-          <h2 id="feels-like-text">Feels Like</h2>
+          <h2 className="bot-description" id="feels-like-text">
+            Feels Like
+          </h2>
           <h2 id="feels-like"></h2>
         </div>
         <div className="bot-container">
-          <h2>High</h2>
+          <h2 className="bot-description">High</h2>
           <h2 id="high"></h2>
         </div>
       </div>

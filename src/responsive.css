@@ -1,0 +1,49 @@
+@media screen and (max-width: 600px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  #user-input {
+    align-self: center;
+    margin: 10px 0;
+  }
+
+  #info-gif-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #gif-temp {
+    margin: 0 !important;
+  }
+
+  #descriptionP,
+  #locationP {
+    text-align: center;
+  }
+
+  #locationP {
+    margin: 0 !important;
+  }
+
+  #tempP {
+    text-align: center;
+  }
+
+  .small-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .bottom-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer {
+    width: 100%;
+  }
+}
