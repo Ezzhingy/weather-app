@@ -10,6 +10,24 @@
   justify-content: space-between;
 }
 
+.snow {
+  background: linear-gradient(
+        rgba(148, 165, 181, 0.72),
+        rgba(107, 179, 241, 0.6)
+      )
+      fixed,
+    url("./snow-bg.webp") no-repeat fixed center/cover;
+}
+
+.spring {
+  background: linear-gradient(
+        rgba(148, 165, 181, 0.72),
+        rgba(107, 179, 241, 0.6)
+      )
+      fixed,
+    url("./spring-bg.webp") no-repeat fixed center/cover;
+}
+
 #container1 {
   /* margin-left: 6rem; */
 }

@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <div id="container1">
         <input id="location" type="text" placeholder="Search location..." />
-        <button>Submit</button>
+        <button id="location-btn">Submit</button>
       </div>
       <DayInfo />
       <WeekInfo />
