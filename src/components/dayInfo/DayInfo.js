@@ -82,7 +82,9 @@ export const DayInfo = () => {
         updateBg(locationJson);
         updateGif(locationJson);
       } catch (error) {
-        console.log("invalid location, please try again");
+        const errorHandling = document.getElementById("error-handling");
+        errorHandling.innerText =
+          "Location not found. Search must be in the form of 'City', 'City, State' or 'City, Country'.";
       }
     }
 

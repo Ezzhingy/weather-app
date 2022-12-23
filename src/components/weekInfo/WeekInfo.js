@@ -1,5 +1,5 @@
 import "./week-info.css";
-import { createElement, useEffect } from "react";
+import { useEffect } from "react";
 
 export const WeekInfo = () => {
   const getWordDay = (jsonData, i) => {
@@ -36,9 +36,9 @@ export const WeekInfo = () => {
           { mode: "cors" }
         );
         const locationJson = await locationPromise.json();
-        console.log(locationJson);
 
         const bigContainer = document.getElementById("right-container");
+        bigContainer.innerHTML = "";
 
         for (let i = 0; i < locationJson.list.length; i += 8) {
           const smallContainer = document.createElement("div");
@@ -63,7 +63,9 @@ export const WeekInfo = () => {
           }
         }
       } catch (error) {
-        console.log("invalid location (weekly), please try again");
+        const errorHandling = document.getElementById("error-handling");
+        errorHandling.innerText =
+          "Location not found. Search must be in the form of 'City', 'City, State' or 'City, Country'.";
       }
     }
 

@@ -3,10 +3,6 @@
   --footer-grey: rgb(148 165 181 / 72%);
 }
 
-#right-container {
-  /* align-self: flex-start; */
-}
-
 .small-container {
   flex: 1;
   background-color: var(--light-blue);
@@ -33,7 +29,4 @@
 .small-p {
   font-weight: normal;
   font-size: 1.2rem;
-}
-
-.small-temp {
 }
