@@ -23,6 +23,7 @@
   #descriptionP,
   #locationP {
     text-align: center;
+    margin: 0 !important;
   }
 
   #locationP {
