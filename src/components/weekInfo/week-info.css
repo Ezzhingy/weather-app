@@ -4,8 +4,12 @@
   --footer-grey: rgb(148 165 181 / 72%);
 }
 
+#right-container {
+  display: grid;
+  grid-template-rows: repeat(1fr);
+}
+
 .small-container {
-  flex: 1;
   background-color: var(--light-blue);
   opacity: 0.7;
   text-align: center;
@@ -13,12 +17,6 @@
   padding: 20px 0;
   margin-right: 5px;
   border-radius: 8px;
-}
-
-.small-container:hover {
-  transform: scale(1.05);
-  transform-origin: top right 40px;
-  transition-duration: 0.5s;
 }
 
 .small-p,
